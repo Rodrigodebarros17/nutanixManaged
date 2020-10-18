@@ -81,7 +81,7 @@ Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a 
 </div>
 <div align="justify">
 
-#### Configuração dos arquivos para execução das tasks:
+### 1.1. Configuração dos arquivos para execução das tasks:
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
 
