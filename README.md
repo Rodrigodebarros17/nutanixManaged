@@ -18,6 +18,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 
 ## Tecnologias Utilizadas
 
+* VScode
 * Ansible
 * Ansible Vault
 * Ansible Galaxy
