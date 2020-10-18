@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#### VARs ####
+SNAPSHOT_NAME="*";
+DIR_SCRIPT={{ dir_script }};
+BIN_ACLI="/usr/local/nutanix/bin/acli";
+
+#### Delete Snapshots all VMs ####
+function delete_snapshot(){
+
+    echo "yes" | xargs | $BIN_ACLI snapshot.delete "$SNAPSHOT_NAME";
+
+}
+
+#### Remove Script Remote Server ####
+function remove_script(){
+    cd "$DIR_SCRIPT" && rm -rf *;
+}
+
+#### FUNCTION CALL ####
+delete_snapshot
+remove_script
+

@@ -1,0 +1,33 @@
+ - name: Create a directory script nutanix
+   file:
+     path: "{{ dir_script }}"
+     state: directory
+     mode: '0744'
+   tags:
+     - resizeDiskNutanixLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Copy Script template
+   template:
+     src: resizeDiskNutanixLinux.j2
+     dest: "{{ resizeDiskNutanixLinux_script_path }}"
+     owner: root
+     group: root
+     mode: 0744
+   tags:
+     - resizeDiskNutanixLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Exec Script Resize Disk VM Nutanix
+   command: bash "{{ resizeDiskNutanixLinux_script_path }}"
+   tags:
+     - resizeDiskNutanixLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+...

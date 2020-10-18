@@ -1,0 +1,67 @@
+---
+
+ - name: Copy script update NGT
+   win_copy:
+     src: installNGT.bat
+     dest: "{{ script_installNGT }}"
+   tags:
+     - installNGTWindows
+     - updateNGTWindows
+   when: ansible_os_family == "Windows"
+
+ - name: Run update NGT script
+   win_command: cmd.exe /k "{{ script_installNGT }}"
+   become: yes
+   become_user: Administrator
+   become_method: runas
+   ignore_errors: yes
+   failed_when: false
+   tags:
+     - installNGTWindows
+     - updateNGTWindows
+   when: ansible_os_family == "Windows" 
+
+ - name: Wait 240 seconds, Update NGT...
+   wait_for_connection:
+     delay: 120
+     timeout: 240
+   tags:
+     - installNGTWindows
+     - updateNGTWindows
+   when: ansible_os_family == "Windows" 
+
+ - name: Restart ngt agent
+   win_service:
+     name: Nutanix Guest Agent
+     state: restarted
+   become: yes
+   become_user: Administrator
+   become_method: runas
+   tags:
+     - installNGTWindows
+     - updateNGTWindows
+   when: ansible_os_family == "Windows"
+
+ - name: Remove a service
+   win_service:
+     name: Nutanix Self Service Restore Gateway
+     state: absent
+   become: yes
+   become_user: Administrator
+   become_method: runas
+   tags:
+     - installNGTWindows
+     - updateNGTWindows
+   when: ansible_os_family == "Windows"
+
+ - name: Delete script 
+   win_command: cmd.exe /k cd "{{ dir_script_installNGT }}" && del /f /a "{{ script_name }}"
+   become: yes
+   become_user: Administrator
+   become_method: runas
+   tags:
+     - installNGTWindows
+     - updateNGTWindows
+   when: ansible_os_family == "Windows"
+
+...

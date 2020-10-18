@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#### VARs ####
+VM_NAME_NUTANIX_DISPLAY={{ vm_name_nutanix_display }};
+NUM_VCPUS={{ num_vcpus }};
+NUM_CORES_PER_VCPU={{ num_cores_per_vcpu }};
+MEMORY={{ memory }};
+NETWORK={{ network }};
+CLONE_FROM_IMAGE_WINDOWS2012R2={{ clone_from_image_windows2012R2 }}
+DIR_SCRIPT={{ dir_script }};
+CDROM="true";
+BIN_ACLI="/usr/local/nutanix/bin/acli";
+
+#### Verify Exist Directory ####
+function verify_dir_list(){
+
+    if [ -e "$DIR_SCRIPT" ]; then
+
+        cd "$DIR_SCRIPT";
+
+    fi
+
+}
+
+#### Create VM Linux Template Windows ####
+function createVmLinuxTemplateWindows(){
+
+    $BIN_ACLI vm.create "$VM_NAME_NUTANIX_DISPLAY" num_vcpus="$NUM_VCPUS" num_cores_per_vcpu="$NUM_CORES_PER_VCPU" memory="$MEMORY'G'";
+    $BIN_ACLI vm.nic_create "$VM_NAME_NUTANIX_DISPLAY" network="$NETWORK";
+    $BIN_ACLI vm.disk_create "$VM_NAME_NUTANIX_DISPLAY" cdrom="$CDROM" empty="$CDROM";
+    $BIN_ACLI vm.disk_create "$VM_NAME_NUTANIX_DISPLAY" clone_from_image="$CLONE_FROM_IMAGE_WINDOWS2012R2";
+    $BIN_ACLI vm.on "$VM_NAME_NUTANIX_DISPLAY";
+    
+}
+
+#### Remove Script Remote Server ####
+function remove_script(){
+    cd "$DIR_SCRIPT" && rm -rf *;
+}
+
+#### FUNCTION CALL ####
+createVmLinuxTemplateWindows
+remove_script

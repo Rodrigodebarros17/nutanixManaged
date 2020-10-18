@@ -1,0 +1,9 @@
+---
+
+ - name: Nutanix Managed - SRM
+   hosts: all
+   roles:
+     - nutanixManaged
+   
+
+...

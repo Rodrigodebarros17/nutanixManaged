@@ -1,0 +1,35 @@
+---
+ 
+ - name: Create a directory script nutanix
+   file:
+     path: "{{ dir_script }}"
+     state: directory
+     mode: '0744'
+   tags:
+     - deleteSnapshotVmsGroup
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Copy Script template
+   template:
+     src: deleteSnapshotVmsGroup.j2
+     dest: "{{ delete_script_path }}"
+     owner: root
+     group: root
+     mode: 0744
+   tags:
+     - deleteSnapshotVmsGroup
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Exec Script Delete Snapshot VMs Group
+   command: bash "{{ delete_script_path }}"
+   tags:
+     - deleteSnapshotVmsGroup
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+...

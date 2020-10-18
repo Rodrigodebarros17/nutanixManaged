@@ -1,0 +1,22 @@
+#### NUTANIX CVM ####
+[nutanixCVM]
+
+NUTANIX-CVM ansible_host=10.40.2.23 # CONSTANT - NO MODIFY
+
+#### VMs Group Install/Update NGT ####
+[vmsInstallUpdateNGTLinux]
+
+#VM-LINUX-CENTOS ansible_host=
+
+[vmsInstallUpdateNGTWindows]
+
+#VM-WINDOWS ansible_host=10.50.4.249
+
+#### NEW VMs Created ####
+[newLinuxVMsCreated]
+
+VM-LINUX-CENTOS ansible_host=10.50.4.103
+
+[newWindowsVMsCreated]
+
+#VM-WINDOWS ansible_host=

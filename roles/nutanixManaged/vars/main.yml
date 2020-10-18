@@ -1,0 +1,68 @@
+---
+
+#### MANIPULABLE VARIABLES ####
+#### Features #### 
+# Create and remove Snapshots
+# Enable and disable NGT
+# Mount CDROM and unmount CDROM
+# Update NGT
+vms_group_prefix: ""
+snapshot_name: ""
+#### Obs:. VMs Group Name
+# INFRA-LINUX - INFRA-PRODUCAO-LINUX- - INFRA-WINDOWS - INFRA-PRODUCAO-WINDOWS
+# SRM-HOMOLOGACAO-LINUX - SRM-PRODUCAO-LINUX - SRM-HOMOLOGACAO-WINDOWS - SRM-PRODUCAO-WINDOWS
+# M18-HOMOLOGACAO-LINUX - M18-PRODUCAO-LINUX
+# TRUSTHUB-HOMOLOGACAO-LINUX - TRUSTHUB-PRODUCAO-LINUX
+
+#### MANIPULABLE VARIABLES ####
+#### Features #### 
+# Create VMs Centos7 and Windows2012R2
+# Install and update NGT
+vm_name_nutanix_display: "MATARESE-TEST"
+num_vcpus: "2"
+num_cores_per_vcpu: "1"
+memory: "4"
+network: "LAN_K8S_10.50.4.0/24"
+resize_partition: "30"          # New value in GB
+#### CONSTANTS IMAGES VMs ####
+clone_from_image_centos: "centos-template" # CONSTANT
+clone_from_image_windows2012R2: "W2012FullPack06-19" # CONSTANT
+#### Obs:. Name of Available Networks ####
+# LAN_BKP_10.50.10.0/24, LAN_BKP_172.16.200.0/24, LAN_GERENCIA_10.255.90.0/24
+# LAN_HOSTS_10.40.2.0/24, LAN_K8S_10.50.4.0/24, LAN_M18_10.50.0.0/22 
+# LAN_OpenStack_192.168.6.0/24, LAN_SRM_10.50.6.0/24, LAN_TRUSTHUB_10.50.8.0/24
+# VLAN_TRANSITO_192.168.3.0/24
+
+#### CONSTANTS - WARNING: NO MODIFY ####
+dir_script: "/usr/local/script" #### !!!! DANGER - NEVER, NERVER MODIFY !!!! ####
+create_script_path: "/usr/local/script/createSnapshotVmsGroup.sh"
+delete_script_path: "/usr/local/script/deleteSnapshotVmsGroup.sh"
+delete_all_script_path: "/usr/local/script/deleteAllSnapshotVms.sh"
+attachCdromNGT_script_path: "/usr/local/script/attachCdromNGT.sh"
+dettachedCdromNGT_script_path: "/usr/local/script/dettachedCdromNGT.sh"
+attachCdromNGTSpecificVms_script_path: "/usr/local/script/attachCdromNGTSpecificVms.sh"
+dettachedCdromNGTSpecificVms_script_path: "/usr/local/script/dettachedCdromNGTSpecificVms.sh"
+vmsListName_path: "/usr/local/script/vmsListName.txt"
+enableNGT_script_path: "/usr/local/script/enableNGT.sh"
+disableNGT_script_path: "/usr/local/script/disableNGT.sh"
+createVmLinuxTemplateCentos_script_path: "/usr/local/script/createVmLinuxTemplateCentos.sh"
+resizeDiskNutanixLinux_script_path: "/usr/local/script/resizeDiskNutanixLinux.sh"
+resizePartitionVmLinux_script_path: "/usr/local/script/resizePartitionVmLinux.sh"
+createVmWindowsTemplate2012R2_script_path: "/usr/local/script/createVmWindowsTemplate2012R2.sh"
+
+#### VARIABLES INSTALL AND UPDATE NGT ####
+cifs_host: //10.50.6.11/ngt
+mount_point: /home/agility/ngt
+user_dir_agility: /home/agility
+win_user: agility.alcantara
+win_pass: Mudar@123
+script_installNGT: C:\Users\agility.alcantara\Documents\installNGT.bat
+dir_script_installNGT: C:\Users\agility.alcantara\Documents
+script_name: installNGT.bat
+
+#### API CREDENTIALS AND CONFIG ACCESS ####
+cvm_host_url: "https://10.40.2.23"
+cvm_host_port: ":9440"
+cvm_uri_api: "/PrismGateway/services/rest/v2.0/snapshots/"
+user_api: "agility.alcantara@rmansur.com.br"
+pass_api: "Mudar@123"

@@ -1,0 +1,35 @@
+---
+ 
+ - name: Create a directory VM Linux
+   file:
+     path: "{{ dir_script }}"
+     state: directory
+     mode: '0744'
+   tags:
+     - resizePartitionVMLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Copy Script template
+   template:
+     src: resizePartitionVmLinux.j2
+     dest: "{{ resizePartitionVmLinux_script_path }}"
+     owner: root
+     group: root
+     mode: 0744
+   tags:
+     - resizePartitionVMLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Exec Script Resize Partition VM Linux
+   command: bash "{{ resizePartitionVmLinux_script_path }}"
+   tags:
+     - resizePartitionVMLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+...

@@ -1,0 +1,20 @@
+---
+# handlers file
+
+ - name: Start NGT
+   systemd:
+     state: started
+     enabled: yes
+     name: ngt_guest_agent
+
+ - name: Restart NGT
+   systemd:
+     state: restarted
+     daemon_reload: yes
+     name: ngt_guest_agent
+
+ - name: Disable NGT restore
+   systemd:
+     state: stopped
+     enabled: no
+     name: ngt_self_service_restore

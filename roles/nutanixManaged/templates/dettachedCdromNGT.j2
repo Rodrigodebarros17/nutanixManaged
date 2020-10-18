@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#### VARs ####
+VMS_GROUP_PREFIX={{ vms_group_prefix }};
+DIR_SCRIPT={{ dir_script }};
+BIN_ACLI="/usr/local/nutanix/bin/acli";
+BIN_NCLI="/home/nutanix/prism/cli/ncli";
+
+#### Create VMs list UUID ####
+function generate_vms_uuid_list(){
+
+$BIN_ACLI vm.list | egrep -i "$VMS_GROUP_PREFIX" | cut -c63-98 | egrep -v "VM UUID" > UUID-VMS-"$VMS_GROUP_PREFIX".txt;
+
+}
+
+#### Dettached CDROM NGT VMs ####
+function detached_cdrom_ngt(){
+
+    for UUID_VMS_LIST_GROUP in $(cat UUID-VMS-"$VMS_GROUP_PREFIX".txt);
+    do
+        $BIN_NCLI nutanix-guest-tools unmount vm-id="$UUID_VMS_LIST_GROUP";
+    done
+
+}
+
+#### Remove Script Remote Server ####
+function remove_script(){
+    cd "$DIR_SCRIPT" && rm -rf *;
+}
+
+#### FUNCTION CALL ####
+generate_vms_uuid_list
+detached_cdrom_ngt
+remove_script

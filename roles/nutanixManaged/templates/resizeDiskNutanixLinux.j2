@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#### VARs ####
+RESIZE_PARTITION={{ resize_partition }};
+DIR_SCRIPT={{ dir_script }};
+BIN_ACLI="/usr/local/nutanix/bin/acli";
+VM_NAME_NUTANIX_DISPLAY={{ vm_name_nutanix_display }};
+
+#### Verify Exist Directory ####
+function verify_dir_list(){
+
+    if [ -e "$DIR_SCRIPT" ]; then
+
+        cd "$DIR_SCRIPT";
+
+    fi
+
+}
+
+#### Resize Disk VM Nutanix ####
+function resize_disk_vm_nutanix(){
+     
+     DEVICE_DISK_UUID=`$BIN_ACLI vm.disk_get "$VM_NAME_NUTANIX_DISPLAY" | egrep -i "device_uuid:" | cut -d ":" -f2 | sed 's/ //g' | sed 's/"//g' | tail -n1`;
+     $BIN_ACLI vm.disk_update "$VM_NAME_NUTANIX_DISPLAY" new_size="$RESIZE_PARTITION"'G' device_uuid="$DEVICE_DISK_UUID";   
+
+}
+
+#### Remove Script Remote Server ####
+function remove_script(){
+    cd "$DIR_SCRIPT" && rm -rf *;
+}
+
+#### Function Call ####
+resize_disk_vm_nutanix
+remove_script

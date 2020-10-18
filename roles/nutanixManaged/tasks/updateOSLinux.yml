@@ -1,0 +1,82 @@
+---
+
+ - name: Os release
+   shell: cat /etc/redhat-release
+   register: os_old_release
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Kernel Version
+   shell: uname -r
+   register: kernel_old_version
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - debug:
+     msg: "OS Release: {{ os_old_release.stdout }} | Kernel Version: {{ kernel_old_version.stdout }}"
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Update OS
+   yum:
+     name: "*"
+     state: latest
+     update_cache: yes
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: System Reboot
+   reboot:
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Removing Old Kernels
+   command: package-cleanup --oldkernels --count=1 -y
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Os release
+   shell: cat /etc/redhat-release
+   register: os_new_release
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Kernel Version
+   shell: uname -r
+   register: kernel_new_version
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - debug:
+     msg: "OS Release: {{ os_new_release.stdout }} | Kernel Version: {{ kernel_new_version.stdout }}"
+   tags:
+     - updateOSLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+...

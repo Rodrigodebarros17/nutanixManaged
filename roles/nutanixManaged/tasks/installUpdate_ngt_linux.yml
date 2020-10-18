@@ -1,0 +1,86 @@
+---
+
+ - name: Install Dependencies Packages Redhat/Centos
+   yum: 
+     name: cifs-utils
+     state: present
+   tags:
+     - installNGTLinux
+     - updateNGTLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Create directory mount point
+   file:
+     path: "{{ mount_point }}"
+     state: directory
+     mode: '0777'
+   tags:
+     - installNGTLinux
+     - updateNGTLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Mount cifs point
+   mount:
+     src: "{{ cifs_host }}"
+     name: "{{ mount_point }}"
+     fstype: "cifs"
+     state: "mounted"
+     opts: username={{ win_user }},password={{ win_pass }}
+   tags:
+     - installNGTLinux
+     - updateNGTLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Uninstall old NGT
+   shell: cd "{{ mount_point }}"/installer/linux && yes | python uninstall_ngt.py
+   tags:
+     - updateNGTLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Install new version NGT
+   shell: cd "{{ mount_point }}"/installer/linux && python install_ngt.py
+   tags:
+     - installNGTLinux
+     - updateNGTLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+  
+ - name: Umount cifs point
+   mount:
+     src: "{{ cifs_host }}"         
+     name: "{{ mount_point }}"
+     fstype: "cifs"
+     state: unmounted
+     opts: username={{ win_user }},password={{ win_pass }}
+   tags:
+     - installNGTLinux
+     - updateNGTLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+ 
+ - name: Remove CIFS client
+   yum:
+     name: cifs-utils
+     state: absent
+   notify:
+     - Disable NGT restore
+     - Start NGT
+     - Restart NGT
+   tags:
+     - installNGTLinux
+     - updateNGTLinux
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+...

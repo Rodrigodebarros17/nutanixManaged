@@ -1,0 +1,79 @@
+---
+ 
+ - name: Create VM Linux Centos7
+   include_tasks: createVmLinuxTemplateCentos.yml
+   tags: createVmLinuxTemplateCentos
+
+ - name: Resize Disk Nutanix VM Linux Centos7
+   include_tasks: resizeDiskNutanixLinux.yml
+   tags: resizeDiskNutanixLinux
+
+ - name: Create VM Windows2012R2
+   include_tasks: createVmWindowsTemplate2012R2.yml
+   tags: createVmWindowsTemplate2012R2
+
+ - name: Create Snapshot VMs Group
+   include_tasks: createSnapshotVmsGroup.yml
+   tags: createSnapshotVmsGroup
+
+ - name: Delete Snapshot VMs Group
+   include_tasks: deleteSnapshotVmsGroup.yml
+   tags: deleteSnapshotVmsGroup
+
+ - name: Delete All Snapshot VMs
+   include_tasks: deleteAllSnapshotVms.yml
+   tags: deleteAllSnapshotVms
+
+ - name: Attach CDROM NGT VMs Group
+   include_tasks: attachCdromNGTVmsGroup.yml
+   tags: attachCdromNGTVmsGroup
+
+ - name: Attach CDROM NGT Specific VMs
+   include_tasks: attachCdromNGTSpecificVms.yml
+   tags: attachCdromNGTSpecificVms
+
+ - name: Dettached CDROM NGT VMs Group
+   include_tasks: dettachedCdromNGTVmsGroup.yml
+   tags: dettachedCdromNGTVmsGroup
+
+ - name: Dettached CDROM NGT Specific VMS
+   include_tasks: dettachedCdromNGTSpecificVms.yml
+   tags: dettachedCdromNGTSpecificVms
+
+ - name: Enable NGT VMs Group
+   include_tasks: enableNGT.yml
+   tags: enableNGT
+
+ - name: Disable NGT VMs Group
+   include_tasks: disableNGT.yml
+   tags: disableNGT
+
+ - name: Resize Partition VM Linux Centos7
+   include_tasks: resizePartitionVMLinux.yml
+   tags: resizePartitionVMLinux
+
+ - name: Update OS VM Linux Centos7
+   include_tasks: updateOSLinux.yml
+   tags: updateOSLinux
+
+ - name: Install/Update NGT Windows
+   include_tasks: installUpdate_ngt_windows.yml
+   tags:
+     - installNGTWindows
+     - updateNGTWindows
+
+ - name: Install/Update NGT Linux
+   include_tasks: installUpdate_ngt_linux.yml
+   tags:
+     - installNGTLinux
+     - updateNGTLinux
+
+ - name: Create Users Linux Homologação
+   include_tasks: createUsersLinuxHomologacao.yml
+   tags: createUsersLinuxHomologacao
+
+ - name: Create Users Linux Produção
+   include_tasks: createUsersLinuxProducao.yml
+   tags: createUsersLinuxProducao 
+     
+...

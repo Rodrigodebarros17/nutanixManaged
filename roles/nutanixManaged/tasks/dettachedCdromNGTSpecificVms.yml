@@ -1,0 +1,48 @@
+---
+
+ - name: Create a directory script nutanix
+   file:
+     path: "{{ dir_script }}"
+     state: directory
+     mode: '0744'
+   tags:
+     - dettachedCdromNGTSpecificVms
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19" 
+
+ - name: Copy Script template
+   template:
+     src: dettachedCdromNGTSpecificVms.j2
+     dest: "{{ dettachedCdromNGTSpecificVms_script_path }}"
+     owner: root
+     group: root
+     mode: 0744
+   tags:
+     - dettachedCdromNGTSpecificVms
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Copy File VMs List Name
+   copy:
+     src: vmsListName.txt
+     dest: "{{ vmsListName_path }}"
+     owner: root
+     group: root
+     mode: 0744
+   tags:
+     - dettachedCdromNGTSpecificVms
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Exec Script detattached CROM NGT
+   command: bash "{{ dettachedCdromNGTSpecificVms_script_path }}"
+   tags:
+     - dettachedCdromNGTSpecificVms
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+   
+...

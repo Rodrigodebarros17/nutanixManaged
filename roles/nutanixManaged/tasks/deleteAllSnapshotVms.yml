@@ -1,0 +1,24 @@
+---
+ 
+ - name: Create a directory script nutanix
+   file:
+     path: "{{ dir_script }}"
+     state: directory
+     mode: '0744'
+   tags:
+     - deleteAllSnapshotVms
+
+ - name: Copy Script template
+   template:
+     src: deleteAllSnapshotVmsGroup.j2
+     dest: "{{ delete_all_script_path }}"
+     owner: root
+     group: root
+     mode: 0744
+   tags:
+     - deleteAllSnapshotVms
+
+ - name: Exec Script Delete All Snapshot
+   command: bash "{{ delete_all_script_path }}"
+   tags:
+     - deleteAllSnapshotVms

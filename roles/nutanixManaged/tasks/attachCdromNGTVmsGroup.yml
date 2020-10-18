@@ -1,0 +1,35 @@
+---
+
+ - name: Create a directory script nutanix
+   file:
+     path: "{{ dir_script }}"
+     state: directory
+     mode: '0744'
+   tags:
+     - attachCdromNGTVmsGroup
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19" 
+
+ - name: Copy Script template
+   template:
+     src: attachCdromNGT.j2
+     dest: "{{ attachCdromNGT_script_path }}"
+     owner: root
+     group: root
+     mode: 0744
+   tags:
+     - attachCdromNGTVmsGroup
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Exec Script attach CROM NGT
+   command: bash "{{ attachCdromNGT_script_path }}"
+   tags:
+     - attachCdromNGTVmsGroup
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+   
+...

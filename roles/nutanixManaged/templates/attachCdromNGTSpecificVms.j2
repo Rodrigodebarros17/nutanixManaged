@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#### VARs ####
+DIR_SCRIPT={{ dir_script }};
+BIN_ACLI="/usr/local/nutanix/bin/acli";
+BIN_NCLI="/home/nutanix/prism/cli/ncli";
+
+#### Verify Exist Directory ####
+function verify_dir_list(){
+
+    if [ -e "$DIR_SCRIPT" ]; then
+
+        cd "$DIR_SCRIPT";
+
+    fi
+
+}
+
+#### Create VMs list UUID ####
+function generate_vms_uuid_list(){
+
+    for VMS_LIST_NAME in $(cat "$DIR_SCRIPT"/vmsListName.txt);
+    do
+        $BIN_ACLI vm.list | egrep -i "$VMS_LIST_NAME" | cut -c63-98 | egrep -v "VM UUID" >> VMS_LIST_UUID.txt;
+    done
+
+}
+
+#### Attach CDROM NGT VMs ####
+function attach_cdrom_ngt(){
+
+    for VMS_LIST_UUID in $(cat VMS_LIST_UUID.txt);
+    do
+        $BIN_NCLI nutanix-guest-tools mount vm-id="$VMS_LIST_UUID";
+    done
+
+}
+
+#### Remove Script Remote Server ####
+function remove_script(){
+    cd "$DIR_SCRIPT" && rm -rf *;
+}
+
+#### FUNCTION CALL ####
+generate_vms_uuid_list
+attach_cdrom_ngt
+remove_script

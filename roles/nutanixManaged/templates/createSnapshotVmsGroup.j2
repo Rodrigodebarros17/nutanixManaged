@@ -1,0 +1,68 @@
+#!/bin/bash
+
+#### VARs ####
+VMS_GROUP_PREFIX={{ vms_group_prefix }};
+DIR_SCRIPT={{ dir_script }};
+BIN_ACLI="/usr/local/nutanix/bin/acli";
+SNAPSHOT_NAME={{ snapshot_name }};
+CVM_HOST_URL={{ cvm_host_url }};
+CVM_HOST_PORT={{ cvm_host_port }};
+CVM_URI_API={{ cvm_uri_api }};
+FULL_URL_CVM_API="$(echo "$CVM_HOST_URL$CVM_HOST_PORT$CVM_URI_API")";
+USER_API={{ user_api }};
+PASS_API={{ pass_api }};
+
+
+#### Verify Exist Directory ####
+function verify_dir_list(){
+
+    if [ -e "$DIR_SCRIPT" ]; then
+
+        cd "$DIR_SCRIPT";
+
+    fi
+
+}
+
+#### Create VMs list UUID ####
+function generate_vms_uuid_list(){
+
+$BIN_ACLI vm.list | egrep -i "$VMS_GROUP_PREFIX" | cut -c63-98 | egrep -v "VM UUID" > UUID-VMS-"$VMS_GROUP_PREFIX".txt;
+
+}
+
+#### Create Snapshots VMs Group ####
+function create_snapshot(){
+
+for VM_UUID in $(cat UUID-VMS-"$VMS_GROUP_PREFIX".txt);
+do
+
+DATA_POST="$(cat <<EOF
+{
+        "snapshot_specs": [
+                {
+                        "snapshot_name": "$SNAPSHOT_NAME",
+                        "vm_uuid": "$VM_UUID"
+                }
+        ]
+}
+EOF
+)";
+
+curl -u "$USER_API:$PASS_API" -k -X POST --header "Content-Type: application/json" --header "Aceitar: application/json" -d "$DATA_POST" "$FULL_URL_CVM_API";
+
+done
+
+}
+
+#### Remove Script Remote Server ####
+function remove_script(){
+        cd "$DIR_SCRIPT" && rm -rf *;
+}
+
+#### FUNCTION CALL ####
+verify_dir_list
+generate_vms_uuid_list
+create_snapshot
+remove_script
+

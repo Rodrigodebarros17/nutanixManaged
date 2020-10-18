@@ -1,0 +1,33 @@
+ - name: Create a directory script nutanix
+   file:
+     path: "{{ dir_script }}"
+     state: directory
+     mode: '0744'
+   tags:
+     - createVmWindowsTemplate2012R2
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Copy Script template
+   template:
+     src: createVmWindowsTemplate2012R2.j2
+     dest: "{{ createVmWindowsTemplate2012R2_script_path }}"
+     owner: root
+     group: root
+     mode: 0744
+   tags:
+     - createVmWindowsTemplate2012R2
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+ - name: Exec Script Create VM Windows Template 2012R2
+   command: bash "{{ createVmWindowsTemplate2012R2_script_path }}"
+   tags:
+     - createVmWindowsTemplate2012R2
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address == "10.40.2.19"
+
+...

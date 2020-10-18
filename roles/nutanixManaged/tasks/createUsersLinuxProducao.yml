@@ -1,0 +1,38 @@
+---
+
+ - name: Add User Agility
+   user:
+     name: agility
+     shell: /bin/bash
+     group: wheel
+     append: yes
+     update_password: always
+     password: $6$5KnHzkeUCeaboXlp$Ge6DYEOADMaeD7mC6dimA/9xOc5QWPs5DCX28psl79tKHnThjDkYCxMmB2N8tJm1BtGveZvbcp7OuszaZPMxv.
+   tags: createUsersLinuxProducao
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Add User Developer
+   user:
+     name: developer
+     shell: /bin/bash
+     append: yes
+     update_password: always
+     password: $6$ZzCk7UH8J6dgTRGF$ZZicy8jh4Ow24eaAaxsofr750XeDnANE9QNJ8YhErr55EwGr3PbWB/yuYnjOOUTWKJUvkyuIiNCO3WKoIE5C8/
+   tags: createUsersLinuxProducao
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+ - name: Update Root user's Password
+   user:
+     name: root
+     update_password: always
+     password: $6$LJjDuwFLhTGDFR6i$PyUCDwIYt5hVMOqojvrHHVO2aflsNFUKjHuZ6XVSTTX4qDljBjmxX.JdxNrzwspMKBP4wLZAoF3jzcx5F0/k21
+   tags: createUsersLinuxProducao
+   ignore_errors: yes
+   failed_when: false
+   when: ansible_default_ipv4.address != "10.40.2.19"
+
+...

@@ -1,0 +1,50 @@
+#!/bin/bash
+
+#### VARs ####
+DEVICE="/dev/sda";
+PARTNR="2";
+DISK_SIZE_CURRENT=10;
+RESERVATION_LVM=2;
+RESIZE_PARTITION={{ resize_partition }};
+EXTEND_SIZE_LV=`echo $((RESIZE_PARTITION-DISK_SIZE_CURRENT-RESERVATION_LVM))`;
+VG_NAME="cl_centos7-template";
+LV_NAME="/dev/cl_centos7-template/root";
+DIR_SCRIPT={{ dir_script }};
+BIN_ACLI="/usr/local/nutanix/bin/acli";
+VM_NAME_NUTANIX_DISPLAY={{ vm_name_nutanix_display }};
+
+#### Verify Exist Directory ####
+function verify_dir_list(){
+
+    if [ -e "$DIR_SCRIPT" ]; then
+
+        cd "$DIR_SCRIPT";
+
+    fi
+
+}
+
+#### Resize Partition LVM ####
+function resize_partition_lvm(){
+
+        fdisk -l $DEVICE$PARTNR >> /dev/null 2>&1;
+        CURRENTSIZEB=`fdisk -l $DEVICE$PARTNR | grep "Disk $DEVICE$PARTNR" | cut -d' ' -f5`;
+        CURRENTSIZE=`expr $CURRENTSIZEB / 1024 / 1024`;
+        MAXSIZEMB=`printf %s\\n 'unit MB print list' | parted | grep "Disk $DEVICE" | cut -d' ' -f3 | tr -d MB`;
+        parted $DEVICE resizepart $PARTNR $MAXSIZEMB;
+        partprobe;
+        pvresize $DEVICE$PARTNR;
+        vgextend $VG_NAME $DEVICE$PARTNR;
+        lvextend -L '+'"$EXTEND_SIZE_LV"'G' "$LV_NAME";
+        xfs_growfs "$LV_NAME";
+
+}
+
+#### Remove Script Remote Server ####
+function remove_script(){
+    cd "$DIR_SCRIPT" && rm -rf *;
+}
+
+#### Function Call ####
+resize_partition_lvm
+remove_script
