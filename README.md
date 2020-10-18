@@ -16,6 +16,15 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 * ansible-vault 2.9.7 ou superior
 * Uma VM com um compartilhamento CIFS na rede, contendo os arquivos de instalação do Nutanix Guest Tools - NGT
 
+## Tecnologias Utilizadas
+
+* Ansible
+* Ansible Vault
+* CLI nuatanix: acli e ncli
+* Shell Script
+* Nutanix API REST v2
+* Script em lote (.bat)
+
 ## Guia de Utilização
 
 Neste guia de utilização está descrito detalhadamente todos os processos necessários para a exucação de cada task e suas respectivas tags. Logo abaixo você pode visualizar todas as tasks organizadas em uma estrutura de lista, contendo os detalhes para a sua utilização.
