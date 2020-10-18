@@ -117,7 +117,7 @@ Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o no
 
 ### 1.2. Primeira etapa de execução das tasks:
 
-Nesta primeira etapa, será executa as tasks responsáveis por cirar a VM, Montar o dirve de CD-ROM, e realizar o resize do disco da VM a partir do Nutanix.
+Nesta primeira etapa, será executada as tasks responsáveis por cirar a VM, Montar o dirve de CD-ROM, e realizar o resize do disco da VM a partir do Nutanix.
 
 ##### Exemplo:
 
@@ -125,7 +125,7 @@ Nesta primeira etapa, será executa as tasks responsáveis por cirar a VM, Monta
 ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "createVmLinuxTemplateCentos, attachCdromNGTSpecificVms, resizeDiskNutanixLinux" -vvv
 
 ```
-##### Obs:. Após a execução dessas tasks, já saberemos qual o IP da VM criada, e iremos adiciona-la ao inventário do ansible para dar continuidade na execução das demais tasks.
+##### Obs:. Após a execução dessas tasks, já saberemos qual o IP da VM criada, e iremos adicioná-la ao inventário do ansible para dar continuidade na execução das demais tasks.
 
 </div>
 
