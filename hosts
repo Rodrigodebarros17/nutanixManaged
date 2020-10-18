@@ -15,7 +15,7 @@ NUTANIX-CVM ansible_host=10.40.2.23 # CONSTANT - NO MODIFY
 #### NEW VMs Created ####
 [newLinuxVMsCreated]
 
-VM-LINUX-CENTOS ansible_host=10.50.4.103
+#VM-LINUX-CENTOS ansible_host=10.50.4.103
 
 [newWindowsVMsCreated]
 
