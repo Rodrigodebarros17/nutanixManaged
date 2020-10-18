@@ -119,7 +119,7 @@ Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o no
 
 Nesta primeira etapa, será executada as tasks responsáveis por cirar a VM, Montar o dirve de CD-ROM, e realizar o resize do disco da VM a partir do Nutanix.
 
-##### Exemplo:
+##### Exemplo de execução das tasks:
 
 ```
 ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "createVmLinuxTemplateCentos, attachCdromNGTSpecificVms, resizeDiskNutanixLinux" -vvv
@@ -134,7 +134,12 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "createVmLinuxTem
 
 Agora iremos acessar a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos filtrar a busca com o nome da VM que acabamos de criar. Assim podemos visualizar o endereço IP atribuído a essa VM, e adicioná-la ao inventário do ansible para executar as demais tasks. Conforme as imagens a seguir.
 
+##### Exemplo de execução das tasks:
 
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "resizePartitionVMLinux, updateOSLinux, installNGTLinux, createUsersLinuxHomologacao" -vvv
+
+```
 
 </div>
 
