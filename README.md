@@ -43,11 +43,13 @@ Neste guia de utilização está descrito detalhadamente todos os processos nece
 ## Tópicos
 
 <a id="ancora1"></a>
-### 1. Criar uma nova VM linux CentOS7:
-> Loren Ipsum
+1. Criar uma nova VM linux CentOS7:
+>
 
 <div align="justify">
- 
+
+### 1. Criar uma nova VM linux CentOS7:
+
 Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a mesma para o cliente são:
 </div>
 <div align="justify">
@@ -145,6 +147,7 @@ Agora iremos acessar a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos fil
 ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "resizePartitionVMLinux, updateOSLinux, installNGTLinux, createUsersLinuxHomologacao" -vvv
 
 ```
+[Topo](#ancora1)
 
 </div>
 
