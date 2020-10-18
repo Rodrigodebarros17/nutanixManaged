@@ -36,3 +36,15 @@ Neste guia de utilização está descrito detalhadamente todos os processos nece
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
 
 ![Alt text](img/2-configVarsNewVM.png?raw=true "Config Vars - New VM")
+
+```
+##### Exemplo:
+
+vm_name_nutanix_display: "VM-LINUX-TEST"
+num_vcpus: "2"
+num_cores_per_vcpu: "1"
+memory: "4"                             # Valor em GB
+network: "LAN_K8S_10.50.4.0/24"
+resize_partition: "30"                  # Valor em GB
+
+```
