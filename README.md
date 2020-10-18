@@ -42,11 +42,11 @@ Neste guia de utilização está descrito detalhadamente todos os processos nece
 
 <a name="ancora"></a>
 ## Tópicos
-- [CriarVMLinux](#ancora1)
-- [CriarVMWindows](#ancora2)
-- [Mizukage](#ancora3)
-- [Raikage](#ancora4)
-- [Tsuchikage](#ancora4)
+- [Criar uma VM Linux](#ancora1)
+- [Criar uma VM Windows](#ancora2)
+- [Criar Snapshots por grupo de VMs](#ancora3)
+- [Deletar Snapshots por grupo de VMs ](#ancora4)
+- [Deletar todos os snapshots](#ancora4)
 
 <div align="justify">
 
