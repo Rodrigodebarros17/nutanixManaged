@@ -53,7 +53,7 @@ Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a 
 
 * **TASK: Attach CDROM NGT Specific VMs | TAG: attachCdromNGTSpecificVms:**
 
-    Irá montar o Drive de CDROM na VM a ser criada. **Obs.** Pré requisito para posteriormente realizar a instalação do Nutanix Guest Tools - NGT.
+    Irá montar o Drive de CD-ROM na VM a ser criada. **Obs.** Pré requisito para posteriormente realizar a instalação do Nutanix Guest Tools - NGT.
 
 * **TASK: Resize Disk Nutanix VM Linux Centos7 | TAGS: resizeDiskNutanixLinux:**
 
@@ -81,7 +81,7 @@ Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a 
 </div>
 <div align="justify">
 
-### 1.1. Configuração dos arquivos para execução das tasks:
+### 1.1. Configuração do arquivo de variáveis para a criação da VM:
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
 
@@ -104,3 +104,13 @@ resize_partition: "30"                  # Valor em GB
 
 ```
 </div>
+<div align="justify">
+ 
+### 1.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
+
+Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurado no vars/main.yml, na variável **"vm_name_nutanix_display"**. Conforme o exemplo da figura abaixo.
+
+![Alt text](img/3-vmsListName.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
+
+</div>
+
