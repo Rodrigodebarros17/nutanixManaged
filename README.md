@@ -1,24 +1,26 @@
+<div align="justify">
+
 # nutanixManaged
-<p align="justify">
+
 Este playbook tem como objetivo automatizar tarefas no paravirtualizador Nutanix. Todas as tarefas podem ser executadas a partir de suas respectivas tags. Segue abaixo uma imagem ilustrativa com todas as tarefas e suas respectivas tags:
 </p>
 ![Alt text](img/1-tasks.png?raw=true "List Tasks")
 <p align="justify">
 A mesma saída ilustrada na imagem acima, pode ser obtida através do comando:
-</p>
+
 ```
 ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 
 ```
 
 ## Pré Requisitos
-<p align="justify">
+
 * ansible 2.9.7 ou superior
 * ansible-vault 2.9.7 ou superior
 * Uma VM com um compartilhamento CIFS na rede, contendo os arquivos de instalação do Nutanix Guest Tools - NGT
-</p>
+
 ## Tecnologias Utilizadas
-<p align="justify">
+
 * VScode
 * Ansible
 * Ansible Vault
@@ -27,15 +29,15 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 * Shell Script
 * Nutanix API REST v2
 * Script em lote (.bat)
-</p>
+
 ## Guia de Utilização
-<p align="justify">
+
 Neste guia de utilização está descrito detalhadamente todos os processos necessários para a exucação de cada task e suas respectivas tags. Logo abaixo você pode visualizar todas as tasks organizadas em uma estrutura de lista, contendo os detalhes para a sua utilização.
-</p>
+
 ### 1. Criar uma nova VM linux CentOS7:
-<p align="justify">
+
 Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a mesma para o cliente são:
-</p>
+
 * **TASK: Create VM Linux Centos7  | TAG: createVmLinuxTemplateCentos:**
 
     Irá criar uma nova VM Linux CentOS7 com a definição do nome da VM que será mostrada na WEB-GUI do nutanix, bem como todas as definições de requisitos de hardware, como; CPU, Memória, Disco e Rede.
@@ -71,6 +73,8 @@ Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
 
 ![Alt text](img/2-configVarsNewVM.png?raw=true "Config Vars - New VM")
+
+</div>
 
 ##### Obs:. Por padrão, a imagem utilizada para essa VM, irá criar um disco com 10GB de capacidade de armazenamento. Caso o cliente deseje uma VM com maior capacidade de armazenamento, você poderá configurar a variável "resize_partition" para definir um novo valor, de acordo com a demanda especificada pelo cliente.
 
