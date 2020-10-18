@@ -108,7 +108,7 @@ resize_partition: "30"                  # Valor em GB
  
 ### 1.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
 
-Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurado no vars/main.yml, na variável **"vm_name_nutanix_display"**. Conforme o exemplo da figura abaixo.
+Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurada no vars/main.yml, na variável **"vm_name_nutanix_display"**. Conforme o exemplo da figura abaixo.
 
 ![Alt text](img/3-vmsListName.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
 
