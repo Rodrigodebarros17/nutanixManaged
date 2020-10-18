@@ -132,7 +132,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "createVmLinuxTem
 
 ### 1.2. Segunda etapa de execução das tasks:
 
-Agora iremos acessar a WEB-GUI do Nutanix e no menu, na opção VMs iremos filtrar a busca com o nome da VM que acabamos de criar. Assim podemos visualizar o endereço IP atribuído a essa VM, e adicioná-la ao inventário do ansible para executar as demais tasks. Conforme as imagens a seguir.
+Agora iremos acessar a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos filtrar a busca com o nome da VM que acabamos de criar. Assim podemos visualizar o endereço IP atribuído a essa VM, e adicioná-la ao inventário do ansible para executar as demais tasks. Conforme as imagens a seguir.
 
 
 
