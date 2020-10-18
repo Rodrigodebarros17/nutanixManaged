@@ -1,5 +1,5 @@
 # nutanixManaged
-Este playbook tem como objetivo automatizar tarefas no paravirtualizador nutanix. Todas as tarefas podem ser executadas a partir de suas respectivas tags. Segue abaixo uma imagem ilustrtiva com todas as tarefas e suas respectivas tags:
+Este playbook tem como objetivo automatizar tarefas no paravirtualizador nutanix. Todas as tarefas podem ser executadas a partir de suas respectivas tags. Segue abaixo uma imagem ilustrativa com todas as tarefas e suas respectivas tags:
 
 ![Alt text](img/1-tasks.png?raw=true "List Tasks")
 
@@ -36,6 +36,8 @@ Neste guia de utilização está descrito detalhadamente todos os processos nece
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
 
 ![Alt text](img/2-configVarsNewVM.png?raw=true "Config Vars - New VM")
+
+##### Obs:. Por padrão, a imagem utilizada para essa VM, irá criar um disco com 10GB de capacidade de armazenamento. Caso o cliente deseje uma VM com maior capacidade de armazenamento, você poderá configurar a variável "resize_partition" para definir um novo valor, de acordo com a demanda especificada pelo cliente.
 
 ##### Exemplo:
 
