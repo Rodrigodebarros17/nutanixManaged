@@ -125,7 +125,7 @@ Nesta primeira etapa, será executa as tasks responsáveis por cirar a VM, Monta
 ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "createVmLinuxTemplateCentos, attachCdromNGTSpecificVms, resizeDiskNutanixLinux" -vvv
 
 ```
-##### Obs:. Após a execução dessas tasks, já saberemos qual o IP da VM criada, e adiciona-la ao inventário do ansible para dar continuidade na execução das demais tasks.
+##### Obs:. Após a execução dessas tasks, já saberemos qual o IP da VM criada, e iremos adiciona-la ao inventário do ansible para dar continuidade na execução das demais tasks.
 
 </div>
 
