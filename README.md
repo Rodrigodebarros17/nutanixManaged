@@ -76,10 +76,12 @@ Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a 
     Irá criar os usuários do cliente para VMs disponibilizadas no ambiente de homologação, bem como o usuário de acesso da agility.
 
 * **TASK: Create Users Linux Produção | TAG: createUsersLinuxProducao:**
-</div>
-<div align="justify">
  
     Irá criar os usuários do cliente para VMs disponibilizadas no ambiente de produção, bem como o usuário de acesso da agility.
+</div>
+<div align="justify">
+
+#### Configuração dos arquivos para execução das tasks:
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
 
