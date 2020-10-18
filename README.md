@@ -37,9 +37,9 @@ Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores da
 
 ![Alt text](img/2-configVarsNewVM.png?raw=true "Config Vars - New VM")
 
-```
 ##### Exemplo:
 
+```
 vm_name_nutanix_display: "VM-LINUX-TEST"
 num_vcpus: "2"
 num_cores_per_vcpu: "1"
