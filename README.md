@@ -10,4 +10,9 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 
 ```
 
-1. 
+## Pré Requisitos
+
+* ansible 2.9.7 ou superior
+* ansible-vault 2.9.7 ou superior
+
+
