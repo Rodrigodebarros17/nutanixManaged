@@ -14,7 +14,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 
 * ansible 2.9.7 ou superior
 * ansible-vault 2.9.7 ou superior
-* Uma VM com conpartilhamento CIFS contendo os arquivos de instalação do Nutanix Guest Tools - NGT
+* Uma VM com um compartilhamento CIFS na rede, contendo os arquivos de instalação do Nutanix Guest Tools - NGT
 
 ## Guia de Utilização
 
