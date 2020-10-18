@@ -46,13 +46,13 @@ Neste guia de utilização está descrito detalhadamente todos os processos nece
 - [Criar uma VM Windows](#ancora2)
 - [Criar Snapshots por grupo de VMs](#ancora3)
 - [Deletar Snapshots por grupo de VMs ](#ancora4)
-- [Montar CD-ROM por grupo de VMs](#ancora5)
-- [Desmontar CD-ROM por grupo de VMs](#ancora6)
-- [Deletar todos os snapshots](#ancora7)
+- [Deletar todos os snapshots](#ancora5)
+- [Montar CD-ROM por grupo de VMs](#ancora6)
+- [Desmontar CD-ROM por grupo de VMs](#ancora7)
 - [Habilitar o NGT por grupo de VMs](#ancora8)
 - [Desabilitar o NGT por grupo de VMs](#ancora9)
 - [Atualizar NGT em VMs Linux](#ancora10)
-- [Atualizar NGT em VMs Windows](#ancora10)
+- [Atualizar NGT em VMs Windows](#ancora11)
 
 <div align="justify">
 
