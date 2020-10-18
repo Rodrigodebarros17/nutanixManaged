@@ -51,10 +51,10 @@ Neste guia de utilização está descrito detalhadamente todos os processos nece
 <div align="justify">
 
 <a id="ancora1"></a>
-## Hokage
->
 
 ### 1. Criar uma nova VM linux CentOS7:
+
+>
 
 Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a mesma para o cliente são:
 </div>
