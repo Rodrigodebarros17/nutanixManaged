@@ -5,7 +5,7 @@
 Este playbook tem como objetivo automatizar tarefas no paravirtualizador Nutanix. Todas as tarefas podem ser executadas a partir de suas respectivas tags. Segue abaixo uma imagem ilustrativa com todas as tarefas e suas respectivas tags:
 
 ![Alt text](img/1-tasks.png?raw=true "List Tasks")
- mesma saída ilustrada na imagem acima, pode ser obtida através do comando:
+##### Obs:. A mesma saída ilustrada na imagem acima, pode ser obtida através do comando:
 
 ```
 ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
