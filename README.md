@@ -35,11 +35,11 @@ Neste guia de utilização está descrito detalhadamente todos os processos nece
 
 Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a mesma para o cliente são:
 
-##### * TASK: Create VM Linux Centos7  | TAG: createVmLinuxTemplateCentos:
+* **TASK: Create VM Linux Centos7  | TAG: createVmLinuxTemplateCentos:**
 
 Irá criar uma nova VM Linux CentOS7 com a definição do nome da VM que será mostrada na WEB-GUI do nutanix, bem como todas as definições de requisitos de hardware, como; CPU, Memória, Disco e Rede.
 
-##### * TASK: Attach CDROM NGT Specific VMs | TAG: attachCdromNGTSpecificVms:
+* **TASK: Attach CDROM NGT Specific VMs | TAG: attachCdromNGTSpecificVms:**
 
 Irá montar o Drive de CDROM na VM a ser criada. Obs. Pré requisito para posteriormente realizar a instalação do Nutanix Guest Tools - NGT.
 
