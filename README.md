@@ -39,10 +39,15 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 
 Neste guia de utilização está descrito detalhadamente todos os processos necessários para a exucação de cada task e suas respectivas tags. Logo abaixo você pode visualizar todas as tasks organizadas em uma estrutura de lista, contendo os detalhes para a sua utilização.
 </div>
+
+## Tópicos
+
+<a id="ancora1"></a>
+### 1. Criar uma nova VM linux CentOS7:
+> Loren Ipsum
+
 <div align="justify">
  
-### 1. Criar uma nova VM linux CentOS7:
-
 Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a mesma para o cliente são:
 </div>
 <div align="justify">
