@@ -73,11 +73,11 @@ Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a 
 
 * **TASK: Create Users Linux Homologação | TAG: createUsersLinuxHomologacao:**
 
-    Irá criar os usuários do cliente para VMs disponibilizadas no ambiente de homologação, bem como o usuário de acesso da agility.
+    Irá criar os usuários do cliente para VMs disponibilizadas no ambiente de homologação, bem como o usuário de acesso da Agility.
 
 * **TASK: Create Users Linux Produção | TAG: createUsersLinuxProducao:**
  
-    Irá criar os usuários do cliente para VMs disponibilizadas no ambiente de produção, bem como o usuário de acesso da agility.
+    Irá criar os usuários do cliente para VMs disponibilizadas no ambiente de produção, bem como o usuário de acesso da Agility.
 </div>
 <div align="justify">
 
