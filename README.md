@@ -20,7 +20,8 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 
 * Ansible
 * Ansible Vault
-* CLI nuatanix: acli e ncli
+* Ansible Galaxy
+* CLI nutanix: acli e ncli
 * Shell Script
 * Nutanix API REST v2
 * Script em lote (.bat)
