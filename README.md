@@ -19,7 +19,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
 
 Neste guia de utilização está descrito detalhadamente todos os processos necessários para a exucação de cada task e suas respectivas tags. Logo abaixo você pode visualizar todas as tasks organizadas em uma estrutura de lista, contendo os detalhes para a sua utilização.
 
-1. Criar uma nova VM linux Cenots 7:
+#### 1. Criar uma nova VM linux Cenots 7:
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
 
