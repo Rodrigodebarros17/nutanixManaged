@@ -168,9 +168,9 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "resizePartitionV
 
 <div align="justify">
 
-<a id="ancora1"></a>
+<a id="ancora2"></a>
 
-### 1. Criar uma nova VM Windows 2012R2:
+### 2. Criar uma nova VM Windows 2012R2:
 
 >
 
