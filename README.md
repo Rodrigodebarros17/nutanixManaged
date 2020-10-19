@@ -37,7 +37,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --list-task -vvv
  
 ## Guia de Utilização
 
-Neste guia de utilização está descrito detalhadamente todos os processos necessários para a exucação de cada task e suas respectivas tags. Logo abaixo você pode visualizar todas as tasks organizadas em uma estrutura de lista, contendo os detalhes para a sua utilização.
+Neste guia de utilização está descrito detalhadamente todos os processos necessários para a exucação de cada task e suas respectivas tags. Logo abaixo você pode visualizar todas as tasks organizadas em uma estrutura de tópico, contendo os detalhes para a sua utilização.
 </div>
 
 <a name="ancora"></a>
