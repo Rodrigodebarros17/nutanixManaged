@@ -161,7 +161,9 @@ Agora iremos acessar a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos fil
 ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "resizePartitionVMLinux, updateOSLinux, installNGTLinux, createUsersLinuxHomologacao" -vvv
 
 ```
-![Alt text](img/3-vmsListName.png?raw=true "New VM - List IP")
+![Alt text](img/4-newVM.png?raw=true "New VM - List IP")
+
+![Alt text](img/5-hostsFile.png?raw=true "New VM - Hosts File Ansible")
 
 [Topo](#ancora1)
 
