@@ -184,7 +184,7 @@ Para criar uma nova VM Windows 2012R2, apenas uma task será executada no proces
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
 
-![Alt text](img/2-configVarsNewVM2.png?raw=true "Config Vars - New VM")
+![Alt text](img/6-configVarsNewVM2.png?raw=true "Config Vars - New VM")
 
 </div>
 <div align="justify">
