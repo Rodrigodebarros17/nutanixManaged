@@ -180,6 +180,29 @@ Para criar uma nova VM Windows 2012R2, apenas uma task será executada no proces
 
     Irá criar uma nova VM Windows 2012R2 com a definição do nome da VM que será mostrada na WEB-GUI do nutanix, bem como todas as definições de requisitos de hardware, como; CPU, Memória, Disco e Rede.
 
+### 2.1. Configuração do arquivo de variáveis para a criação da VM:
+
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
+
+![Alt text](img/2-configVarsNewVM2.png?raw=true "Config Vars - New VM")
+
+</div>
+<div align="justify">
+ 
+##### Obs:. Por padrão, a imagem utilizada para essa VM, irá criar um disco com 35GB de capacidade de armazenamento.
+
+##### Exemplo:
+
+```
+vm_name_nutanix_display: "VM-WINDOWS-TEST"
+num_vcpus: "2"
+num_cores_per_vcpu: "1"
+memory: "4"                             # Valor em GB
+network: "LAN_K8S_10.50.4.0/24"
+
+```
+</div>
+
 [Topo](#ancora2)
 
 </div>
