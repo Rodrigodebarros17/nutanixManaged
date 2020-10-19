@@ -178,6 +178,8 @@ Para criar uma nova VM Windows 2012R2, apenas uma task será executada no proces
 
 * **TASK: Create VM Windows2012R2 | TAG: createVmWindowsTemplate2012R2:**
 
+    Irá criar uma nova VM Windows 2012R2 com a definição do nome da VM que será mostrada na WEB-GUI do nutanix, bem como todas as definições de requisitos de hardware, como; CPU, Memória, Disco e Rede.
+
 [Topo](#ancora2)
 
 </div>
