@@ -174,5 +174,11 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "resizePartitionV
 
 >
 
+Para criar uma nova VM Windows 2012R2, apenas uma task será executada no processo de automação, pois logo após a criação da VM, a mesma não ficará disponível na rede, impossibilitando a continuidade da automação. Ela é:
+
+* **TASK: Create VM Windows2012R2 | TAG: createVmWindowsTemplate2012R2:**
+
+[Topo](#ancora2)
+
 </div>
 
