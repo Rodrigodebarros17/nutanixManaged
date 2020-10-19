@@ -88,7 +88,7 @@ Para criar uma nova VM linux, as tasks a serem executadas para disponibilizar a 
 
 * **TASK: Install/Update NGT Linux | TAG: installNGTLinux:**
 
-    Irá realizar a instalação no Nutanix Guest Tools - NGT na sua última versão.
+    Irá realizar a instalação do Nutanix Guest Tools - NGT na sua última versão.
 
 * **TASK: Create Users Linux Homologação | TAG: createUsersLinuxHomologacao:**
 
