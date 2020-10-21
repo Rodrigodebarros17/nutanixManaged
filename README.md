@@ -221,17 +221,15 @@ Para criar spanapshots de um grupo de VMs, apenas uma task será executada no pr
 
     Irá criar snapshots de todas as VMs pertecentes a um mesmo grupo.
     
-### 3.1. Configuração do arquivo de variáveis para a criar os snapshots por grupo de VMs:
+### 3.1. Configuração do arquivo de variáveis para criar os snapshots por grupo de VMs:
 
-Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis **"vms_group_prefix"** e **"snapshot_name"**, para a primeira variável você irá atribuir o nome do grupo de VMs que deseja criar os snapshots, na segundo, o nome dos snapshots, que será comum para todas as VMs pertecentes ao grupo a tribuído como valor na variável anterior. Segue imagem ilustrativa abaixo:
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis **"vms_group_prefix"** e **"snapshot_name"**, onde para a primeira variável você irá atribuir o nome do grupo de VMs que deseja criar os snapshots, na segunda, o nome do snapshot, que será comum para todas as VMs pertecentes ao grupo atribuído como valor na variável anterior. Segue imagem ilustrativa abaixo:
 
 ![Alt text](img/6-configVarsNewVM2.png?raw=true "Config Vars - New VM")
 
 </div>
 <div align="justify">
  
-##### Obs:. Por padrão, a imagem utilizada para essa VM, irá criar um disco com 35GB de capacidade de armazenamento.
-
 ##### Exemplo:
 
 ```
