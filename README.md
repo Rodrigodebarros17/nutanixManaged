@@ -45,7 +45,7 @@ Neste guia de utilização está descrito detalhadamente todos os processos nece
 - [Criar uma VM Linux](#ancora1)
 - [Criar uma VM Windows](#ancora2)
 - [Criar Snapshots por grupo de VMs](#ancora3)
-- [Deletar Snapshots por grupo de VMs ](#ancora4)
+- [Deletar Snapshots que foram criados por grupo de VMs ](#ancora4)
 - [Deletar todos os snapshots](#ancora5)
 - [Montar CD-ROM por grupo de VMs](#ancora6)
 - [Desmontar CD-ROM por grupo de VMs](#ancora7)
@@ -251,3 +251,45 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createSnapshotVms
 [Topo](#ancora3)
 
 </div>
+
+### 4. Deletar Snapshots que foram criados por grupo de VMs:
+
+>
+
+Para deletar os spanapshots que foram criados por grupo de VMs, apenas uma task será executada no processo de automação. Ela é:
+
+* **TASK: Delete Snapshot VMs Group | TAG: deleteSnapshotVmsGroup:**
+
+    Irá criar snapshots de todas as VMs pertecentes a um mesmo grupo.
+    
+### 3.1. Configuração do arquivo de variáveis para criar os snapshots por grupo de VMs:
+
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis **"vms_group_prefix"** e **"snapshot_name"**, onde para a primeira variável você irá atribuir o nome do grupo de VMs que deseja criar os snapshots, na segunda, o nome do snapshot, que será comum para todas as VMs pertecentes ao grupo atribuído como valor na variável anterior. Segue imagem ilustrativa abaixo:
+
+![Alt text](img/7-snapshotGroup.png?raw=true "Snapshot - VM Group")
+
+</div>
+<div align="justify">
+ 
+##### Exemplo de configuração das variáveis:
+
+```
+vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
+snapshot_name: "updateOS"
+
+```
+Após realizar a atribuição dos valores para as variáveis, já podemos executar a task.
+
+##### Exemplo de execução da task:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createSnapshotVmsGroup -vvv
+
+```
+
+</div>
+
+[Topo](#ancora3)
+
+</div>
+
