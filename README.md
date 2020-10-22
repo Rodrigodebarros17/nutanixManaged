@@ -230,7 +230,7 @@ Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores da
 </div>
 <div align="justify">
  
-##### Exemplo:
+##### Exemplo de configuração das variáveis:
 
 ```
 vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
