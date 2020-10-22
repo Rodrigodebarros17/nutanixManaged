@@ -295,3 +295,33 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags deleteSnapshotVms
 
 </div>
 
+<div align="justify">
+
+<a id="ancora5"></a>
+
+### 5. Deletar todos os Snapshots existentes no Nutanix:
+
+>
+
+Para deletar todos os snapshots existentes no Nutanix, apenas uma task será executada no processo de automação. Ela é:
+
+* **Delete All Snapshot VMs | TAG: deleteAllSnapshotVms:**
+
+    Irá deletar todos os snapshots de todas as VMs existentes no Nutanix. **Obs.** Para executar essa task, não é necessário configuração de variáveis.
+    
+<div align="justify">
+ 
+
+##### Exemplo de execução da task:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags deleteAllSnapshotVms -vvv
+
+```
+
+</div>
+
+[Topo](#ancora5)
+
+</div>
+
