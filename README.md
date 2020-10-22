@@ -233,11 +233,8 @@ Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores da
 ##### Exemplo:
 
 ```
-vm_name_nutanix_display: "VM-WINDOWS-TEST"
-num_vcpus: "2"
-num_cores_per_vcpu: "1"
-memory: "4"                             # Valor em GB
-network: "LAN_K8S_10.50.4.0/24"
+vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
+snapshot_name: "updateOS"
 
 ```
 </div>
