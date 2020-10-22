@@ -248,9 +248,12 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createSnapshotVms
 
 </div>
 
-[Topo](#ancora4)
+[Topo](#ancora3)
 
 </div>
+<div align="justify">
+
+<a id="ancora4"></a>
 
 ### 4. Deletar Snapshots que foram criados por grupo de VMs:
 
