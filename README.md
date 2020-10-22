@@ -237,6 +237,15 @@ vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
 snapshot_name: "updateOS"
 
 ```
+Após realizar a atribuição dos valores para as variáveis, já podemos executar a task.
+
+##### Exemplo de execução da task:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createSnapshotVmsGroup -vvv
+
+```
+
 </div>
 
 [Topo](#ancora3)
