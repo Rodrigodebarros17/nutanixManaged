@@ -217,7 +217,7 @@ network: "LAN_K8S_10.50.4.0/24"
 
 Para criar spanapshots de um grupo de VMs, apenas uma task será executada no processo de automação. Ela é:
 
-* **TASK: Create VM Windows2012R2 | TAG: createVmWindowsTemplate2012R2:**
+* **TASK: Create Snapshot VMs Group | TAG: createSnapshotVmsGroup:**
 
     Irá criar snapshots de todas as VMs pertecentes a um mesmo grupo.
     
