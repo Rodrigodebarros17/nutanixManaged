@@ -248,7 +248,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createSnapshotVms
 
 </div>
 
-[Topo](#ancora3)
+[Topo](#ancora4)
 
 </div>
 
@@ -260,13 +260,13 @@ Para deletar os spanapshots que foram criados por grupo de VMs, apenas uma task 
 
 * **TASK: Delete Snapshot VMs Group | TAG: deleteSnapshotVmsGroup:**
 
-    Irá criar snapshots de todas as VMs pertecentes a um mesmo grupo.
+    Irá deletar os snapshots de todas as VMs pertecentes a um mesmo grupo a partir do nome do snapshot definido durante a sua criação.
     
-### 3.1. Configuração do arquivo de variáveis para criar os snapshots por grupo de VMs:
+### 4.1. Configuração do arquivo de variáveis para deletar os snapshots criados por grupo de VMs:
 
-Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis **"vms_group_prefix"** e **"snapshot_name"**, onde para a primeira variável você irá atribuir o nome do grupo de VMs que deseja criar os snapshots, na segunda, o nome do snapshot, que será comum para todas as VMs pertecentes ao grupo atribuído como valor na variável anterior. Segue imagem ilustrativa abaixo:
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"snapshot_name"**, onde esse valor deve ser correspondente ao nome do snapshot definido durante a criação dos mesmos. Segue imagem ilustrativa abaixo:
 
-![Alt text](img/7-snapshotGroup.png?raw=true "Snapshot - VM Group")
+![Alt text](img/8-deleteSnapshotGroup.png?raw=true "Delete Snapshot - VM Group")
 
 </div>
 <div align="justify">
@@ -274,22 +274,21 @@ Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores da
 ##### Exemplo de configuração das variáveis:
 
 ```
-vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
 snapshot_name: "updateOS"
 
 ```
-Após realizar a atribuição dos valores para as variáveis, já podemos executar a task.
+Após realizar a atribuição do valor para a variável, já podemos executar a task.
 
 ##### Exemplo de execução da task:
 
 ```
-ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createSnapshotVmsGroup -vvv
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags deleteSnapshotVmsGroup -vvv
 
 ```
 
 </div>
 
-[Topo](#ancora3)
+[Topo](#ancora4)
 
 </div>
 
