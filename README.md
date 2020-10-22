@@ -209,7 +209,7 @@ network: "LAN_K8S_10.50.4.0/24"
 
 <div align="justify">
 
-<a id="ancora2"></a>
+<a id="ancora3"></a>
 
 ### 3. Criar Snapshots por grupo de VMs:
 
@@ -239,6 +239,6 @@ snapshot_name: "updateOS"
 ```
 </div>
 
-[Topo](#ancora2)
+[Topo](#ancora3)
 
 </div>
