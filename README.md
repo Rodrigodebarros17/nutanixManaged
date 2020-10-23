@@ -341,7 +341,7 @@ Para montar o drive de CD-ROM por grupos de VMs, apenas uma task será executada
 
 ### 6.1. Configuração do arquivo de variáveis para montar o drive de CD-ROM por grupo de VMs:
 
-Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs você deseja realizar a montagem. Segue imagem ilustrativa abaixo:
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs que você deseja realizar a montagem. Segue imagem ilustrativa abaixo:
 
 ![Alt text](img/9-mountCDROMGroups.png?raw=true "Mount CD-ROM - VM Group")
 
@@ -384,7 +384,7 @@ Para desmontar o drive de CD-ROM por grupos de VMs, apenas uma task será execut
 
 ### 7.1. Configuração do arquivo de variáveis para desmontar o drive de CD-ROM por grupo de VMs:
 
-Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs você deseja realizar a desmontagem. Segue imagem ilustrativa abaixo:
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs que você deseja realizar a desmontagem. Segue imagem ilustrativa abaixo:
 
 ![Alt text](img/9-mountCDROMGroups.png?raw=true "Unmount CD-ROM - VM Group")
 
