@@ -333,9 +333,11 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags deleteAllSnapshot
 
 >
 
-Para o montar drive de CD-ROM por grupos de VMs, apenas uma task será executada no processo de automação. Ela é:
+Para montar o drive de CD-ROM por grupos de VMs, apenas uma task será executada no processo de automação. Ela é:
 
 * **Attach CDROM NGT VMs Group | TAG: attachCdromNGTVmsGroup:**
+
+    Irá montar o drive de CD-ROM para todo um grupo de VMs.
 
 ### 6.1. Configuração do arquivo de variáveis para montar o drive de CD-ROM por grupo de VMs:
 
