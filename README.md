@@ -341,7 +341,7 @@ Para o drive de CD-ROM por grupos de VMs, apenas uma task será executada no pro
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs você deseja realizar a montagem . Segue imagem ilustrativa abaixo:
 
-![Alt text](img/9-mountCDROMGroups.png?raw=true "Mount CD-ROM - VM Group").
+![Alt text](img/9-mountCDROMGroups.png?raw=true "Mount CD-ROM - VM Group")
 
 <div align="justify">
  
