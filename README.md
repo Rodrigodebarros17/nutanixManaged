@@ -341,7 +341,7 @@ Para montar o drive de CD-ROM por grupos de VMs, apenas uma task será executada
 
 ### 6.1. Configuração do arquivo de variáveis para montar o drive de CD-ROM por grupo de VMs:
 
-Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs você deseja realizar a montagem . Segue imagem ilustrativa abaixo:
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs você deseja realizar a montagem. Segue imagem ilustrativa abaixo:
 
 ![Alt text](img/9-mountCDROMGroups.png?raw=true "Mount CD-ROM - VM Group")
 
@@ -367,6 +367,50 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags attachCdromNGTVms
 [Topo](#ancora6)
 
 </div>
+
+<div align="justify">
+
+<a id="ancora6"></a>
+
+### 7. Desmontar CD-ROM por grupo de VMs:
+
+>
+
+Para desmontar o drive de CD-ROM por grupos de VMs, apenas uma task será executada no processo de automação. Ela é:
+
+* **Dettached CDROM NGT VMs Group | TAG: dettachedCdromNGTVmsGroup:**
+
+    Irá desmontar o drive de CD-ROM para todo um grupo de VMs.
+
+### 7.1. Configuração do arquivo de variáveis para desmontar o drive de CD-ROM por grupo de VMs:
+
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs você deseja realizar a desmontagem. Segue imagem ilustrativa abaixo:
+
+![Alt text](img/9-mountCDROMGroups.png?raw=true "Unmount CD-ROM - VM Group")
+
+<div align="justify">
+ 
+##### Exemplo de configuração da variável:
+
+```
+vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
+
+```
+Após realizar a atribuição do valor da variável, já podemos executar a task.
+
+##### Exemplo de execução da task:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags dettachedCdromNGTVmsGroup -vvv
+
+```
+
+</div>
+
+[Topo](#ancora7)
+
+</div>
+
 
 
 
