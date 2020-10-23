@@ -425,7 +425,7 @@ Para habilitar o NGT por grupo de VMs, apenas uma task será executada no proces
 
     Irá habilitar o NGT para todo um grupo de VMs.
 
-### 8.1. Configuração do arquivo de variáveis para desmontar habilitar o NGT por grupo de VMs:
+### 8.1. Configuração do arquivo de variáveis para habilitar o NGT por grupo de VMs:
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs que você deseja que o NGT seja habilitado. Segue imagem ilustrativa abaixo:
 
