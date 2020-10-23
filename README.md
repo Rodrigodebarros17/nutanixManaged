@@ -274,13 +274,13 @@ Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da va
 </div>
 <div align="justify">
  
-##### Exemplo de configuração das variáveis:
+##### Exemplo de configuração da variável:
 
 ```
 snapshot_name: "updateOS"
 
 ```
-Após realizar a atribuição do valor para a variável, já podemos executar a task.
+Após realizar a atribuição do valor da variável, já podemos executar a task.
 
 ##### Exemplo de execução da task:
 
@@ -333,7 +333,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags deleteAllSnapshot
 
 >
 
-Para o drive de CD-ROM por grupos de VMs, apenas uma task será executada no processo de automação. Ela é:
+Para o montar drive de CD-ROM por grupos de VMs, apenas uma task será executada no processo de automação. Ela é:
 
 * **Attach CDROM NGT VMs Group | TAG: attachCdromNGTVmsGroup:**
 
@@ -345,13 +345,13 @@ Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da va
 
 <div align="justify">
  
-##### Exemplo de configuração das variáveis:
+##### Exemplo de configuração da variável:
 
 ```
 vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
 
 ```
-Após realizar a atribuição dos valores para as variáveis, já podemos executar a task.
+Após realizar a atribuição do valor da variável, já podemos executar a task.
 
 ##### Exemplo de execução da task:
 
