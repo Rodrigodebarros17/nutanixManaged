@@ -337,14 +337,21 @@ Para o drive de CD-ROM por grupos de VMs, apenas uma task será executada no pro
 
 * **Attach CDROM NGT VMs Group | TAG: attachCdromNGTVmsGroup:**
 
-### 4.1. Configuração do arquivo de variáveis para montar o drive de CD-ROM por grupo de VMs:
+### 6.1. Configuração do arquivo de variáveis para montar o drive de CD-ROM por grupo de VMs:
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs você deseja realizar a montagem . Segue imagem ilustrativa abaixo:
 
 ![Alt text](img/9-mountCDROMGroups.png?raw=true "Mount CD-ROM - VM Group").
-    
+
 <div align="justify">
  
+##### Exemplo de configuração das variáveis:
+
+```
+vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
+
+```
+Após realizar a atribuição dos valores para as variáveis, já podemos executar a task.
 
 ##### Exemplo de execução da task:
 
