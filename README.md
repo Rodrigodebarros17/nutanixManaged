@@ -456,7 +456,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags enableNGT -vvv
 
 <div align="justify">
 
-<a id="ancora8"></a>
+<a id="ancora9"></a>
 
 ### 9. Desabilitar NGT por grupo de VMs:
 
@@ -466,7 +466,7 @@ Para desabilitar o NGT por grupo de VMs, apenas uma task será executada no proc
 
 * **Disable NGT VMs Group | TAG: disableNGT:**
 
-    Irá habilitar o NGT para todo um grupo de VMs.
+    Irá desabilitar o NGT para todo um grupo de VMs.
 
 ### 9.1. Configuração do arquivo de variáveis para desabilitar o NGT por grupo de VMs:
 
