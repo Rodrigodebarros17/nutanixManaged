@@ -411,6 +411,52 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags dettachedCdromNGT
 
 </div>
 
+<div align="justify">
+
+<a id="ancora8"></a>
+
+### 8. Habilitar NGT por grupo de VMs:
+
+>
+
+Para habilitar o NGT por grupo de VMs, apenas uma task será executada no processo de automação. Ela é:
+
+* **Enable NGT VMs Group | TAG: enableNGT:**
+
+    Irá habilitar o NGT para todo um grupo de VMs.
+
+### 8.1. Configuração do arquivo de variáveis para desmontar habilitar o NGT por grupo de VMs:
+
+Dentro do diretório vars/ no arquivo main.yml você irá atribuir o valor da variável **"vms_group_prefix"**, onde esse valor deve ser o nome do grupo de VMs que você deseja que o NGT seja habilitado. Segue imagem ilustrativa abaixo:
+
+![Alt text](img/9-mountCDROMGroups.png?raw=true "NGT true - VM Group")
+
+<div align="justify">
+ 
+##### Exemplo de configuração da variável:
+
+```
+vms_group_prefix: "SRM-HOMOLOGACAO-LINUX"
+
+```
+Após realizar a atribuição do valor da variável, já podemos executar a task.
+
+##### Exemplo de execução da task:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags enableNGT -vvv
+
+```
+
+</div>
+
+[Topo](#ancora8)
+
+</div>
+
+
+
+
 
 
 
