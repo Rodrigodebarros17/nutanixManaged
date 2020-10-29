@@ -505,7 +505,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags disableNGT -vvv
 
 >
 
-Para atualizar o NGT em uma VM linux, apenas uma task será executada no processo de automação, pois logo após a criação da VM. Ela é:
+Para atualizar o NGT em uma VM Linux, apenas uma task será executada no processo de automação. Ela é:
 
 * **Install/Update NGT Linux | TAG: updateNGTLinux:**
 
@@ -519,9 +519,50 @@ No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP d
 
 </div>
 
+##### Exemplo de execução da task:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags disableNGT -vvv
+
+```
+
 [Topo](#ancora10)
 
 </div>
+
+<div align="justify">
+
+<a id="ancora11"></a>
+
+### 11. Atualizar NGT em VMs Windows:
+
+>
+
+Para atualizar o NGT em uma VM Windows, apenas uma task será executada no processo de automação. Ela é:
+
+* **Install/Update NGT Windows | TAG: updateNGTWindows:**
+
+    Irá atualizar o NGT para a última versão disponível.
+
+### 11.1. Adicionar o IP da VM no iventário do ansible.
+
+No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
+
+![Alt text](img/10-updateNGTLinux.png?raw=true "Update NGT - Linux")
+
+</div>
+
+##### Exemplo de execução da task:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags disableNGT -vvv
+
+```
+
+[Topo](#ancora11)
+
+</div>
+
 
 
 
