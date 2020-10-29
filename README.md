@@ -511,7 +511,9 @@ Para atualizar o NGT em uma VM linux, apenas uma task será executada no process
 
     Irá atualizar o NGT para a última versão disponível.
 
-### 2.1. Adicionar o IP da VM no iventário do ansible, ou seja, no arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", conforme a figura a seguir.
+### 10.1. Adicionar o IP da VM no iventário do ansible.
+
+No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
 
 ![Alt text](img/10-updateNGTLinux.png?raw=true "Update NGT - Linux")
 
