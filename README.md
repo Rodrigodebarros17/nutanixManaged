@@ -522,7 +522,7 @@ No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP d
 ##### Exemplo de execução da task:
 
 ```
-ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags disableNGT -vvv
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags updateNGTLinux -vvv
 
 ```
 
@@ -546,16 +546,16 @@ Para atualizar o NGT em uma VM Windows, apenas uma task será executada no proce
 
 ### 11.1. Adicionar o IP da VM no iventário do ansible.
 
-No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
+No arquivo hosts, no grupo "vmsInstallUpdateNGTWindows", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
 
-![Alt text](img/11-updateNGTLinux.png?raw=true "Update NGT - Linux")
+![Alt text](img/11-updateNGTWindows.png?raw=true "Update NGT - Windows")
 
 </div>
 
 ##### Exemplo de execução da task:
 
 ```
-ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags disableNGT -vvv
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags updateNGTWindows -vvv
 
 ```
 
