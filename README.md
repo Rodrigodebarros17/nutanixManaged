@@ -548,7 +548,7 @@ Para atualizar o NGT em uma VM Windows, apenas uma task será executada no proce
 
 No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
 
-![Alt text](img/10-updateNGTLinux.png?raw=true "Update NGT - Linux")
+![Alt text](img/11-updateNGTLinux.png?raw=true "Update NGT - Linux")
 
 </div>
 
