@@ -201,6 +201,13 @@ memory: "4"                             # Valor em GB
 network: "LAN_K8S_10.50.4.0/24"
 
 ```
+##### Exemplo de execução da task:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createVmWindowsTemplate2012R2 -vvv
+
+```
+
 </div>
 
 [Topo](#ancora2)
