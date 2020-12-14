@@ -211,6 +211,15 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createVmWindowsTe
 
 </div>
 
+<div align="justify">
+ 
+### 2.2. Adicionando o IP da VM ao inventário do ansible:
+
+Acesse a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos filtrar a busca com o nome da VM que acabamos de criar. Assim podemos visualizar o endereço IP atribuído a essa VM, e adicioná-la ao inventário do ansible, no arquivo **hosts**, no grupo **[newWindowsVMsCreated]** para executar as demais tasks.
+ 
+</div>
+
+
 [Topo](#ancora2)
 
 </div>
