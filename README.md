@@ -196,11 +196,12 @@ Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores da
 
 ```
 vm_name_nutanix_display: "VM-WINDOWS-TEST"
-num_vcpus: "2"
+num_vcpus: "1"
 num_cores_per_vcpu: "1"
-memory: "4"                             # Valor em GB
+memory: "4"                            # Value in GB
 network: "LAN_K8S_10.50.4.0/24"
-
+resize_partition: "50"                 # New value in GB
+hostname_vm_windows: "WinSQL-Server"
 ```
 ##### Exemplo de execução da task:
 
