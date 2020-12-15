@@ -203,18 +203,25 @@ network: "LAN_K8S_10.50.4.0/24"
 resize_partition: "50"                 # New value in GB
 hostname_vm_windows: "WinSQL-Server"
 ```
-##### Exemplo de execução da task:
-
-```
-ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createVmWindowsTemplate2012R2 -vvv
-
-```
 
 ### 2.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
 
 Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurada no vars/main.yml, na variável "vm_name_nutanix_display". Conforme o exemplo da figura abaixo.
 
 ![Alt text](img/14-vmsListName.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
+
+### 2.3. Primeira etapa de execução das tasks:
+
+Nesta primeira etapa, será executada as tasks responsáveis por cirar a VM, Montar o dirve de CD-ROM, e realizar o resize do disco da VM a partir do Nutanix.
+
+##### Exemplo de execução das tasks:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createVmWindowsTemplate2012R2, attachCdromNGTSpecificVms, resizeDiskNutanixWindows -vvv
+
+```
+##### Obs:. Após a execução dessas tasks, já saberemos qual o IP da VM criada, e iremos adicioná-la ao inventário do ansible para dar continuidade na execução das demais tasks.
+
 
 </div>
 
