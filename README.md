@@ -227,13 +227,13 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "createVmWindowsT
 
 <div align="justify">
 
-### 2.3. Segunda etapa de execução das tasks:
+### 2.4. Segunda etapa de execução das tasks:
 
 Nesta segunda etapa você irá acessar a VM criada, pela console do nutanix, onde será necessário realizar as configurações de localização/região. Conforme a figura abaixo.
 
 ![Alt text](img/15-configRegionWin.png?raw=true "Display Nutanix - New VM Win")
 
-### 2.4. Adicionando o IP da VM ao inventário do ansible:
+### 2.5. Adicionando o IP da VM ao inventário do ansible:
 
 Acesse a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos filtrar a busca com o nome da VM que acabamos de criar. Assim podemos visualizar o endereço IP atribuído a essa VM, e adicioná-la ao inventário do ansible, no arquivo **hosts**, no grupo **[newWindowsVMsCreated]** para executar as demais tasks, conforme as imagens a seguir.
 
@@ -241,7 +241,7 @@ Acesse a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos filtrar a busca c
 
 ![Alt text](img/12-addNewVmWindowsIventory.png?raw=true "Add Inventory - New VM Win")
 
-### 2.4. Executando a task Sysprep para remover registros da imagem utilizada:
+### 2.6. Executando a task Sysprep para remover registros da imagem utilizada:
 
 ##### Exemplo de execução da task sysPrep:
 
