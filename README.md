@@ -249,7 +249,7 @@ Acesse a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos filtrar a busca c
 ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags sysPrep -vvv
 
 ```
-##### Obs:. Após a execução dessa task, a VM será reiniciada, onde logo em seguida você irá realizar novamente as configurações localização/região a partir da console de gerenciamento do Nutanix.
+##### Obs:. Após a execução dessa task, a VM será reiniciada, onde logo em seguida você irá realizar novamente as configurações de localização/região a partir da console de gerenciamento do Nutanix.
  
 </div>
 
