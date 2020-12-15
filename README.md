@@ -217,7 +217,7 @@ Nesta primeira etapa, será executada as tasks responsáveis por cirar a VM, mon
 ##### Exemplo de execução das tasks:
 
 ```
-ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createVmWindowsTemplate2012R2, attachCdromNGTSpecificVms, resizeDiskNutanixWindows -vvv
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "createVmWindowsTemplate2012R2, attachCdromNGTSpecificVms, resizeDiskNutanixWindows" -vvv
 
 ```
 ##### Obs:. Após a execução dessas tasks, já saberemos qual o IP da VM criada, e iremos adicioná-la ao inventário do ansible para dar continuidade na execução das demais tasks.
