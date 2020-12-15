@@ -210,11 +210,17 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags createVmWindowsTe
 
 ```
 
+### 2.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
+
+Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurada no vars/main.yml, na variável "vm_name_nutanix_display". Conforme o exemplo da figura abaixo.
+
+![Alt text](img/14-vmsListName.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
+
 </div>
 
 <div align="justify">
  
-### 2.2. Adicionando o IP da VM ao inventário do ansible:
+### 2.3. Adicionando o IP da VM ao inventário do ansible:
 
 Acesse a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos filtrar a busca com o nome da VM que acabamos de criar. Assim podemos visualizar o endereço IP atribuído a essa VM, e adicioná-la ao inventário do ansible, no arquivo **hosts**, no grupo **[newWindowsVMsCreated]** para executar as demais tasks, conforme as imagens a seguir.
 
