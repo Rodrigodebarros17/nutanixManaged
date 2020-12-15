@@ -240,6 +240,16 @@ Acesse a WEB-GUI do Nutanix, e no menu, na opção VMs, iremos filtrar a busca c
 ![Alt text](img/13-vmWindowsDisplayNutanix.png?raw=true "Display Nutanix - New VM Win")
 
 ![Alt text](img/12-addNewVmWindowsIventory.png?raw=true "Add Inventory - New VM Win")
+
+### 2.4. Executando a task Sysprep para remover registros da imagem utilizada:
+
+##### Exemplo de execução da task sysPrep:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags sysPrep -vvv
+
+```
+##### Obs:. Após a execução dessa task, a VM será reiniciada, onde logo em seguida você irá realizar novamente as configurações localização/região a partir da console de gerenciamento do Nutanix.
  
 </div>
 
