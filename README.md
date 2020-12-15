@@ -137,7 +137,7 @@ Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o no
 
 ### 1.3. Primeira etapa de execução das tasks:
 
-Nesta primeira etapa, será executada as tasks responsáveis por cirar a VM, Montar o dirve de CD-ROM, e realizar o resize do disco da VM a partir do Nutanix.
+Nesta primeira etapa, será executada as tasks responsáveis por cirar a VM, montar o dirve de CD-ROM, e realizar o resize do disco da VM a partir do Nutanix.
 
 ##### Exemplo de execução das tasks:
 
@@ -212,7 +212,7 @@ Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o no
 
 ### 2.3. Primeira etapa de execução das tasks:
 
-Nesta primeira etapa, será executada as tasks responsáveis por cirar a VM, Montar o dirve de CD-ROM, e realizar o resize do disco da VM a partir do Nutanix.
+Nesta primeira etapa, será executada as tasks responsáveis por cirar a VM, montar o dirve de CD-ROM, e realizar o resize do disco da VM a partir do Nutanix.
 
 ##### Exemplo de execução das tasks:
 
