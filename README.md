@@ -229,7 +229,7 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "createVmWindowsT
 
 ### 2.4. Segunda etapa de execução das tasks:
 
-Nesta segunda etapa você irá acessar a VM criada, pela console do nutanix, onde será necessário realizar as configurações de localização/região. Conforme a figura abaixo.
+Nesta segunda etapa você irá acessar a VM criada, através da console de gerenciamento do nutanix, onde será necessário realizar as configurações de localização/região. Conforme a figura abaixo.
 
 ![Alt text](img/15-configRegionWin.png?raw=true "Display Nutanix - New VM Win")
 
@@ -250,6 +250,17 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags sysPrep -vvv
 
 ```
 ##### Obs:. Após a execução dessa task, a VM será reiniciada, onde logo em seguida você irá realizar novamente as configurações de localização/região a partir da console de gerenciamento do Nutanix.
+
+### 2.7. Terceira etapa de execução das tasks:
+
+Nesta etapa serão executadas todas as tasks necessárias para finalizar a entraga da VM ao cliente. Execute essas tasks conforme o exemplo abaixo.
+
+##### Exemplo de execução das tasks:
+
+```
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "xxxx, yyyy, zzzz" -vvv
+
+```
  
 </div>
 
