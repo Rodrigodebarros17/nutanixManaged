@@ -258,7 +258,7 @@ Nesta etapa serão executadas todas as tasks necessárias para finalizar a entra
 ##### Exemplo de execução das tasks:
 
 ```
-ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "resizePartitionVMWindows, updateOSWindows, domainIngress" -vvv
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "resizePartitionVMWindows, domainIngress, updateNGTWindows, updateOSWindows" -vvv
 
 ```
  
