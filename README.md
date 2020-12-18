@@ -189,6 +189,22 @@ Para criar uma nova VM windows, as tasks a serem executadas para disponibilizar 
 
     Irá redimensionar o disco da VM a partir do Nutanix.
 
+* **TASK: Resize Partition VM Windows 2012R2 | TAGS: resizePartitionVMWindows:**
+
+    Irá redimencionar a partição raiz (C:), de acordo com o valor redimensionado pelo Nutanix.
+    
+* **TASK: Domain Ingress | TAGS: domainIngress:**  
+
+     Irá ingressar a VM no dóminio do cliente.
+     
+* **TASK: Install/Update NGT Windows | TAGS: updateNGTWindows:** 
+
+     Irá realizar o update do Nutanix Guest Tools - NGT para a sua última versão.
+     
+* **TASK: Update OS Windows | TAGS: updateOSWindows:** 
+
+     Irá instalar todas as atualizações do OS.
+     
 ### 2.1. Configuração do arquivo de variáveis para a criação da VM:
 
 Dentro do diretório vars/ no arquivo main.yml você irá atribuir os valores das variáveis de configuração da nova VM a ser criada. Conforme a imagem ilustrativa abaixo:
