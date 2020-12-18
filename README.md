@@ -175,11 +175,19 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "resizePartitionV
 
 >
 
-Para criar uma nova VM Windows 2012R2, apenas uma task será executada no processo de automação, pois logo após a criação da VM, a mesma não ficará disponível na rede, impossibilitando a continuidade da automação. Ela é:
+Para criar uma nova VM windows, as tasks a serem executadas para disponibilizar a mesma para o cliente são:
 
 * **TASK: Create VM Windows2012R2 | TAG: createVmWindowsTemplate2012R2:**
 
     Irá criar uma nova VM Windows 2012R2 com a definição do nome da VM que será mostrada na WEB-GUI do nutanix, bem como todas as definições de requisitos de hardware, como; CPU, Memória, Disco e Rede.
+    
+* **TASK: Attach CDROM NGT Specific VMs | TAG: attachCdromNGTSpecificVms:**
+
+    Irá montar o Drive de CD-ROM na VM a ser criada. **Obs.** Pré requisito para posteriormente realizar a instalação do Nutanix Guest Tools - NGT.
+
+* **TASK: Resize Disk Nutanix VM Windows | TAGS: resizeDiskNutanixWindows:**
+
+    Irá redimensionar o disco da VM a partir do Nutanix.
 
 ### 2.1. Configuração do arquivo de variáveis para a criação da VM:
 
