@@ -593,13 +593,13 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags disableNGT -vvv
 
 Para atualizar o NGT em uma VM Linux, apenas duas task serão executadas no processo de automação. Ela são:
 
-* **Install/Update NGT Linux | TAG: updateNGTLinux:**
-
-    Irá atualizar o NGT para a última versão disponível.
-
 * **TASK: Attach CDROM NGT Specific VMs | TAG: attachCdromNGTSpecificVms:**
 
     Irá montar o Drive de CD-ROM na VM a ser criada. **Obs.** Pré requisito para posteriormente realizar a instalação/update do Nutanix Guest Tools - NGT.
+
+* **Install/Update NGT Linux | TAG: updateNGTLinux:**
+
+    Irá atualizar o NGT para a última versão disponível.
 
 ### 10.1. Adicionar o IP da VM no iventário do ansible.
 
@@ -637,21 +637,21 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "attachCdromNGTSp
 
 Para atualizar o NGT em uma VM Windows, apenas duas task serão executadas no processo de automação. Ela são:
 
-* **Install/Update NGT Windows | TAG: updateNGTWindows:**
-
-    Irá atualizar o NGT para a última versão disponível.
-
 * **TASK: Attach CDROM NGT Specific VMs | TAG: attachCdromNGTSpecificVms:**
 
     Irá montar o Drive de CD-ROM na VM a ser criada. **Obs.** Pré requisito para posteriormente realizar a instalação/update do Nutanix Guest Tools - NGT.
 
-### 10.1. Adicionar o IP da VM no iventário do ansible.
+* **Install/Update NGT Windows | TAG: updateNGTWindows:**
+
+    Irá atualizar o NGT para a última versão disponível.
+
+### 11.1. Adicionar o IP da VM no iventário do ansible.
 
 No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
 
 ![Alt text](img/10-updateNGTLinux.png?raw=true "Update NGT - Windows")
 
-### 10.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
+### 11.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
 
 Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurada no vars/main.yml, na variável **"vm_name_nutanix_display"**. Conforme o exemplo da figura abaixo.
 
