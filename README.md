@@ -605,13 +605,13 @@ Para atualizar o NGT em uma VM Linux, apenas duas task serão executadas no proc
 
 No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
 
-![Alt text](img/10-updateNGTLinux.png?raw=true "Update NGT - Linux")
+![Alt text](img/16.png?raw=true "Update NGT - Linux")
 
 ### 10.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
 
 Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurada no vars/main.yml, na variável **"vm_name_nutanix_display"**. Conforme o exemplo da figura abaixo.
 
-![Alt text](img/3-vmsListName.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
+![Alt text](img/17.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
 
 
 </div>
@@ -649,13 +649,13 @@ Para atualizar o NGT em uma VM Windows, apenas duas task serão executadas no pr
 
 No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
 
-![Alt text](img/10-updateNGTLinux.png?raw=true "Update NGT - Windows")
+![Alt text](img/18.png?raw=true "Update NGT - Windows")
 
 ### 11.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
 
 Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurada no vars/main.yml, na variável **"vm_name_nutanix_display"**. Conforme o exemplo da figura abaixo.
 
-![Alt text](img/3-vmsListName.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
+![Alt text](img/19.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
 
 </div>
 
