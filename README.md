@@ -591,11 +591,15 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags disableNGT -vvv
 
 >
 
-Para atualizar o NGT em uma VM Linux, apenas uma task será executada no processo de automação. Ela é:
+Para atualizar o NGT em uma VM Linux, apenas duas task serão executadas no processo de automação. Ela são:
 
 * **Install/Update NGT Linux | TAG: updateNGTLinux:**
 
     Irá atualizar o NGT para a última versão disponível.
+
+* **TASK: Attach CDROM NGT Specific VMs | TAG: attachCdromNGTSpecificVms:**
+
+    Irá montar o Drive de CD-ROM na VM a ser criada. **Obs.** Pré requisito para posteriormente realizar a instalação/update do Nutanix Guest Tools - NGT.
 
 ### 10.1. Adicionar o IP da VM no iventário do ansible.
 
@@ -603,12 +607,19 @@ No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP d
 
 ![Alt text](img/10-updateNGTLinux.png?raw=true "Update NGT - Linux")
 
+### 10.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
+
+Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurada no vars/main.yml, na variável **"vm_name_nutanix_display"**. Conforme o exemplo da figura abaixo.
+
+![Alt text](img/3-vmsListName.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
+
+
 </div>
 
 ##### Exemplo de execução da task:
 
 ```
-ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags updateNGTLinux -vvv
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "attachCdromNGTSpecificVms, updateNGTLinux" -vvv
 
 ```
 
@@ -624,24 +635,34 @@ ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags updateNGTLinux -v
 
 >
 
-Para atualizar o NGT em uma VM Windows, apenas uma task será executada no processo de automação. Ela é:
+Para atualizar o NGT em uma VM Windows, apenas duas task serão executadas no processo de automação. Ela são:
 
 * **Install/Update NGT Windows | TAG: updateNGTWindows:**
 
     Irá atualizar o NGT para a última versão disponível.
 
-### 11.1. Adicionar o IP da VM no iventário do ansible.
+* **TASK: Attach CDROM NGT Specific VMs | TAG: attachCdromNGTSpecificVms:**
 
-No arquivo hosts, no grupo "vmsInstallUpdateNGTWindows", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
+    Irá montar o Drive de CD-ROM na VM a ser criada. **Obs.** Pré requisito para posteriormente realizar a instalação/update do Nutanix Guest Tools - NGT.
 
-![Alt text](img/11-updateNGTWindows.png?raw=true "Update NGT - Windows")
+### 10.1. Adicionar o IP da VM no iventário do ansible.
+
+No arquivo hosts, no grupo "vmsInstallUpdateNGTLinux", você irá inserir o IP da VM que deseja fazer a atualização do NGT, conforme a figura a seguir.
+
+![Alt text](img/10-updateNGTLinux.png?raw=true "Update NGT - Windows")
+
+### 10.2. Configuração do arquivo vmsListName.txt para realizar a montagem do drive de CD-ROM:
+
+Dentro do diretório files/ no arquivo vmsListName.txt você irá adicionar o nome da VM previamente configurada no vars/main.yml, na variável **"vm_name_nutanix_display"**. Conforme o exemplo da figura abaixo.
+
+![Alt text](img/3-vmsListName.png?raw=true "Config vmsListName.txt - Mount CD-ROM")
 
 </div>
 
 ##### Exemplo de execução da task:
 
 ```
-ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags updateNGTWindows -vvv
+ansible-playbook -i hosts playbook.yml --ask-vault-pass --tags "attachCdromNGTSpecificVms, updateNGTWindows" -vvv
 
 ```
 
